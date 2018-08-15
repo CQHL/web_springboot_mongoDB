@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+<!-- 	<h2>articlesComment LIST</h2>
+	<table>
+		<div th:unless="${#lists.isEmpty(articlesComment)}">
+			<dl th:each="article : ${articlesComment}">
+				<dt class="articlrCommentline">
+					<tr>
+						<td>
+							<span th:text="${article.title}"></span>,
+							<span th:text="${article.type}"></span>,
+							<span th:text="${article.publishTime}"></span>,
+							<span th:text="${article.viewCount}"></span>,
+							<span th:text="${article.commentCount}"></span></td>	
+					</tr>
+				</dt>
+			</dl>
+		</div>
+	</table> -->
+	
+
+ 	<h2>articlesComment LIST</h2>
+	<div th:unless="${#lists.isEmpty(articlesComment)}">
+      <dl th:each="article : ${articlesComment}">
+        <dt class="articlrCommentline">
+          <a th:href=${article.href}>
+          <span th:text="${article.title}">title</span></a>.
+          <span th:text="${article.type}">type</span>.
+          <span th:text="${article.publishTime}">publishTime</span>
+          <span th:text="${article.viewCount}">viewCount</span>
+          <span th:text="${article.commentCount}">commentCount</span>
+        </dt>
+      </dl>
+    </div>
+    <div th:if="${#lists.isEmpty(articlesComment)}">
+      <p>You have no article found</p>
+    </div>
+    
+    
+    <h2>articlesView LIST</h2>
+	<div th:unless="${#lists.isEmpty(articlesView)}">
+      <dl th:each="article : ${articlesView}">
+        <dt class="articlesViewline">
+         <a th:href=${article.href}>
+          <span th:text="${article.title}">title</span></a>.
+          <span th:text="${article.type}">type</span>.
+          <span th:text="${article.publishTime}">publishTime</span>
+          <span th:text="${article.viewCount}">viewCount</span>
+          <span th:text="${article.commentCount}">commentCount</span>
+        </dt>
+      </dl>
+    </div>
+    <div th:if="${#lists.isEmpty(articlesView)}">
+      <p>You have no article found</p>
+    </div>
+    
+    <h2>articlesNew LIST</h2>
+	<div th:unless="${#lists.isEmpty(articlesNew)}">
+      <dl th:each="article : ${articlesNew}">
+        <dt class="articlesNewline">
+        <a th:href=${article.href}>
+          <span th:text="${article.title}">title</span></a>.
+          <span th:text="${article.type}">type</span>.
+          <span th:text="${article.publishTime}">publishTime</span>
+          <span th:text="${article.viewCount}">viewCount</span>
+          <span th:text="${article.commentCount}">commentCount</span>
+        </dt>
+      </dl>
+    </div>
+    <div th:if="${#lists.isEmpty(articlesNew)}">
+      <p>You have no article found</p>
+    </div>
+    
+    <h2>ArticleType 2 LIST</h2>
+	<div th:unless="${#lists.isEmpty(articlesType)}">
+      <dl th:each="article : ${articlesType}">
+        <dt class="articlesTypeline">
+        	<a th:href=${article.href}>
+          <span th:text="${article.title}">title</span></a>.
+          <span th:text="${article.type}">type</span>.
+          <span th:text="${article.publishTime}">publishTime</span>
+          <span th:text="${article.viewCount}">viewCount</span>
+          <span th:text="${article.commentCount}">commentCount</span>
+        </dt>
+      </dl>
+    </div>
+    <div th:if="${#lists.isEmpty(articlesType)}">
+      <p>You have no article found</p>
+    </div>
+</body>
+</html>
